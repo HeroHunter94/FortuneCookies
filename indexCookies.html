@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Fortune Cookies</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Fortune Cookies Generator</h1>
+        </header>
+
+        <div class="container">
+            <a href="https://en.wikipedia.org/wiki/Fortune_cookie">
+                <img id = "cookies" src="https://www.foodrepublic.com/img/gallery/ever-wonder-who-invented-fortune-cookies/intro-1711652781.jpg" alt="Fortune Cookies">
+            </a>
+
+            <button id ="message" onclick ="showMessage()">Click here to show the message</button>
+            <button onclick ="reload()">Click to play again</button>
+            <hr>
+
+            <p id = "output"></p>
+        </div>
+        <script>
+            function showMessage() {
+                const messages = [
+                    "If you know what you're worth, go and get what you deserve. <em>Rocky Balboa</em>.",//0
+                    "No matter how high a mountain is, there is always a way to the top. <em>Anonymous</em>.",//1
+                    "Silence is only uncomfortable if you’re expecting something more. <em>Anonymous</em>.",//2
+                    "An open mind leads to an open life. <em>Anonymous</em>.",//3
+                    "Daily gratitude leads to a life well-lived. <em>Anonymous</em>.",//4
+                    "To live a life you’ll be proud of, you must recognize what is good for you and what should be left behind. <em>Anonymous</em>.",//5
+                    "Don’t be afraid to dream big, be afraid of not trying at all. <em>Anonymous</em>.",//6
+                    "Life isn’t about what happens in the office, it’s about making memories with loved ones. <em>Anonymous</em>.",//7
+                    "For every grey cloud you see, count the abundance of blessings you have. <em>Anonymous</em>.",//8
+                ]
+                console.log("number of messager", messages.length);
+            
+
+                messages.push("The tragedy is not reaching your goals, the tragedy is not having goals to reach. <em>Benjamin Mays</em>.") //9
+                console.table(messages);
+
+                const NUM_MESSAGES = messages.length;
+                let randomNum = Math.floor(Math.random() * NUM_MESSAGES);
+
+                console.log("randomNum", randomNum);
+                document.getElementById("output").innerHTML = messages[randomNum];
+                document.getElementById("cookies").src = "https://cdn.tipjunkie.com/wp-content/uploads/cache/49/87/49878c14e235f2310fbece5f75a7f849.jpg";
+                document.getElementById("message").disabled = true; // Disable the button after clicking
+            }
+            function reload() {
+                location.reload();
+            }
+        </script>
+
+        <footer>
+            <hr>
+            <p>Author: Danilo Russo</p>
+            <a href="mailto:danilorusso.info94@gmail.com">Contact me</a>
+        </footer>
+    </body>
+</html>
